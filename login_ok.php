@@ -33,7 +33,7 @@ exit;
 $username = sanitize($username);
 $password = sanitize($password);
 
-$query = "SELECT username, password FROM monologue_auth WHERE username=?";
+$query = "SELECT username, password FROM bookmarks_auth WHERE username=?";
 $stmt = mysqli_prepare($conn, $query);
 mysqli_stmt_bind_param($stmt, "s", $param_username);
 $param_username = $username;
