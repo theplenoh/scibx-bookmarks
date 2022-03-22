@@ -48,7 +48,7 @@ $page_max = ceil($total / $page_size);
     <div class="row">
         <div class="col-xs-12 w-100 p-3">
             <header>
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-pills">
 <?php
 if($flag_loggedin)
 {
