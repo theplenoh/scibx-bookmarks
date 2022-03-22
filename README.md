@@ -1,0 +1,34 @@
+# php-bookmarks
+
+Online web bookmark storage using PHP / MySQL
+
+## Create SQL Tables
+### Table `bookmarks_entries`
+```
+CREATE TABLE bookmarks_entries (
+    entryID int(11) NOT NULL AUTO_INCREMENT, 
+    URL varchar(255) NOT NULL, 
+    title varchar(255) NOT NULL, 
+    note text, 
+    tags varchar(255), 
+    category varchar(45), 
+    subcategory varchar(45), 
+    time varchar(19), 
+    publicity varchar(15) NOT NULL, 
+    PRIMARY KEY(entryID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+```
+### Table `bookmarks_auth`
+```
+CREATE TABLE bookmarks_auth (
+    userID int(11) NOT NULL AUTO_INCREMENT, 
+    username varchar(15) NOT NULL UNIQUE, 
+    password varchar(255) NOT NULL, 
+    screenname varchar(45) NOT NULL, 
+    PRIMARY KEY(userID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+```
+
+## Credits
+### [kafene/netscape-bookmark-parser](https://github.com/kafene/netscape-bookmark-parser)
+This software uses a PHP library that parses Netscape format bookmark files, released under MIT license.
