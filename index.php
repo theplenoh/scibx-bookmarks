@@ -1,6 +1,11 @@
 <?php
 require_once "common.php";
 
+session_start();
+
+if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
+    echo "<script>alert('로그인 되었습니다!');</script>";
+
 if(!isset($_GET['page_num']))
     $page_num = 1;
 else
