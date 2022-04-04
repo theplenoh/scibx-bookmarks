@@ -7,8 +7,8 @@ Online web bookmark storage using PHP / MySQL
 ```
 CREATE TABLE bookmarks_entries (
     entryID int(11) NOT NULL AUTO_INCREMENT, 
-    URL varchar(255) NOT NULL, 
-    title varchar(255) NOT NULL, 
+    URL text NOT NULL, 
+    title text NOT NULL, 
     note text, 
     tags varchar(255), 
     category varchar(45), 

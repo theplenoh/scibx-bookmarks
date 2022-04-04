@@ -36,7 +36,7 @@ $page_max = ceil($total / $page_size);
 <div class="container">
     <div class="row">
         <div class="col-xs-12 w-100 p-3">
-            <header>
+            <nav>
                 <ul class="nav nav-pills">
 <?php
 if($flag_loggedin)
@@ -52,7 +52,7 @@ if($flag_loggedin)
                         <a class="nav-link active" href="list_public.php">Public</a>
                     </li>
                 </ul>
-            </header>
+            </nav>
 <?php
 if($total == 0)
 {
