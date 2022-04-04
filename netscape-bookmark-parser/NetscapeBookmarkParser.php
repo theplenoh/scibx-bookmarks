@@ -105,7 +105,7 @@ class NetscapeBookmarkParser
                     $this->items[$i]['uri'] = '';
                 }
 
-                if (preg_match('/<a.*>(.*?)<\/a>/i', $line, $m4)) {
+                if (preg_match('/<a.*>(.*?)<\/a>/i', $line, ($m4))) {
                     $this->items[$i]['title'] = $m4[1];
                 } else {
                     $this->items[$i]['title'] = 'untitled';
@@ -113,7 +113,7 @@ class NetscapeBookmarkParser
 
                 if (preg_match('/note="(.*?)"<\/a>/i', $line, $m5)) {
                     $this->items[$i]['note'] = $m5[1];
-                } elseif (preg_match('/<dd>(.*?)$/i', $line, $m6)) {
+                } elseif (preg_match('/<dd>(.*?)$/i', $line, ($m6))) {
                     $this->items[$i]['note'] = str_replace('<br>', "\n", $m6[1]);
                 } else {
                     $this->items[$i]['note'] = '';
@@ -223,7 +223,7 @@ class NetscapeBookmarkParser
         $sanitized = $bookmarkString;
 
         // trim comments
-        $sanitized = preg_replace('@<!--.*-->@mis', '', $sanitized);
+        //$sanitized = preg_replace('@<!--.*-->@mis', '', $sanitized);
 
         // trim unused metadata
         $sanitized = preg_replace('@(<!DOCTYPE|<META|<TITLE|<H1|<P).*\n@i', '', $sanitized);
@@ -233,6 +233,7 @@ class NetscapeBookmarkParser
 
         // trim carriage returns, replace tabs by a single space
         $sanitized = str_replace(array("\r", "\t"), array('',' '), $sanitized);
+        echo $sanitized;
 
         // convert multiline descriptions to one-line descriptions
         // line feeds are converted to <br>
