@@ -1,3 +1,4 @@
 @charset 'utf-8';
 
 .navbar .logo { height: 28px; border: none 0; }
+.navbar form { width: 175px; }
