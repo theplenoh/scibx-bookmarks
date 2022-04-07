@@ -30,12 +30,13 @@ for($idx; $idx >= 0; $idx--)
 
     $query = "INSERT INTO bookmarks_entries (URL, title, note, tags, time, publicity) VALUES('{$URL}', '{$title}', '{$note}', '{$tags}', '{$time}', '{$publicity}')";
 
-    //echo "[$idx]".$query."\n";
+    echo "[$idx]".$query."\n";
+    /*
     if(!mysqli_query($conn, $query))
     {
         echo "Error [$idx]: ".mysqli_error($conn)."\n";
     }
-
+    */
 }
 mysqli_close($conn);
 ?>

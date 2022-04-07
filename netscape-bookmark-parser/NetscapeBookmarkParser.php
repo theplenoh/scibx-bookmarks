@@ -233,7 +233,6 @@ class NetscapeBookmarkParser
 
         // trim carriage returns, replace tabs by a single space
         $sanitized = str_replace(array("\r", "\t"), array('',' '), $sanitized);
-        echo $sanitized;
 
         // convert multiline descriptions to one-line descriptions
         // line feeds are converted to <br>
