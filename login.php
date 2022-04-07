@@ -12,15 +12,12 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="utf-8">
-    <title>Login - Scibx Bookmarks</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+<?php require_once "head.inc.php"; ?>
 </head>
 
 <body>
 <header>
-<?php require_once "nav.php"; ?>
+<?php require_once "nav.inc.php"; ?>
 </header>
 
 <div class="container">
