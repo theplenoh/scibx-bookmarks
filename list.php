@@ -121,7 +121,7 @@ if($total > 0)
 {
 ?>
             <section>
-                <ul class="pagination justify-content-center">
+                <ul class="pagination pagination-sm justify-content-center">
                     <li class="page-item">
 <?php $prev_block = ($block - 1) * $page_scale + 1; ?>
                         <a class="page-link" href="<?php if($block > 0) { echo "?page_num={$prev_block}"; } else { echo "javascript:;"; } ?>">&laquo;</a>
