@@ -1,5 +1,5 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="index.php">Scibx Bookmarks</a>
+        <a class="navbar-brand" href="index.php"><img src="images/bookmark-256.png" alt="Bookmarks" class="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
