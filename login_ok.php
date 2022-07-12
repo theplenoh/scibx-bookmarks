@@ -54,7 +54,7 @@ if(mysqli_stmt_num_rows($stmt) == 1 && password_verify($password, $hashed_passwo
     echo<<<EOT
     <script>
     //alert("{$message}");
-    location.href="index.php";
+    location.href="list.php";
     </script>
     EOT;
     exit;
