@@ -48,7 +48,7 @@ $page_max = ceil($total / $page_size);
             <section class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Add a URL">
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit">Go</button>
+                    <button class="btn btn-primary" type="submit">Add</button>
                 </div>
             </section>
             </form>
