@@ -1,6 +1,6 @@
 <?php
-require_once 'common.php';
-require_once 'netscape-bookmark-parser/NetscapeBookmarkParser.php';
+require_once "common.php";
+require_once "netscape-bookmark-parser/NetscapeBookmarkParser.php";
 
 $parser = new NetscapeBookmarkParser();
 //$bookmarks = $parser->parseFile('./tests/input/netscape_basic.htm');
