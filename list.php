@@ -44,6 +44,14 @@ $page_max = ceil($total / $page_size);
 <div class="container">
     <div class="row">
         <div class="col-xs-12 w-100 p-3">
+            <form action="insert-instant.php" method="post">
+            <section class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Add a URL">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Go</button>
+                </div>
+            </section>
+            </form>
             <nav>
                 <ul class="nav nav-pills">
 <?php
