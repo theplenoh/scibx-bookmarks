@@ -37,7 +37,7 @@ $entryID = $_GET['entryID'];
             <p>Do you really wish to delete the entry?</p>
             <div>
                 <a class="btn btn-danger" href="del_entry_ok.php?entryID=<?=$entryID?>">Delete</a>
-                <a class="btn" href="list.php">Cancel</a>
+                <a class="btn btn-secondary" href="list.php">Cancel</a>
             </div>
         </div>
     </div>
