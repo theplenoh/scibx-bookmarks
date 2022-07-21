@@ -115,7 +115,7 @@ else
                     <div class="btn-group btn-group-sm">
                         <a class="btn btn-sm m-0 p-1 px-1">Edit</a>
                         <a class="btn btn-sm m-0 p-1 px-1" href="del_entry.php?entryID=<?=$entry['entryID']?>">Delete</a>
-                        <a class="btn btn-sm m-0 p-1 px-1">Make Public</a>
+                        <a class="btn btn-sm m-0 p-1 px-1" href="make_public.php?entryID=<?=$entry['entryID']?>">Make Public</a>
                     </div>
                 </div>
                 <div class="card-footer p-1 px-2 small"><?php echo $datetime; ?></div>
