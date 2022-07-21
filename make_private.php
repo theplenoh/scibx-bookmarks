@@ -22,5 +22,5 @@ $entryID = $_GET['entryID'];
 
 mysqli_query($conn, "UPDATE bookmarks_entries SET publicity = 'private' WHERE entryID={$entryID}");
 
-header("Location: list.php");
+header("Location: list_public.php");
 ?>
