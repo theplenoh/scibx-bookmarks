@@ -19,9 +19,9 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
     $flag_loggedin = true;
 
 $URL = $_POST['URL'];
+$title = page_title($URL);
 $time = date("Y-m-d H:i", time());
 $publicity = "private";
-$title = page_title($URL);
 
 $query = "INSERT INTO bookmarks_entries (URL, title, time, publicity) VALUES('{$URL}', '{$title}', '{$time}', '{$publicity}')";
 
