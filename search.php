@@ -21,7 +21,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <?php require_once "head.inc.php"; ?>
+<?php require_once "head.inc.php"; ?>
 </head>
 
 <body>
