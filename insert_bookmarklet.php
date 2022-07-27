@@ -21,7 +21,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
 $URL = $_POST['URL'];
 $title = $_POST['title'];
 $note = $_POST['note'];
-$time = date("Y-m-d H:i", time());
+$time = date("Y-m-d H:i:s", time());
 $publicity = "private";
 
 $query = "INSERT INTO bookmarks_entries (URL, title, note, time, publicity) VALUES('{$URL}', '{$title}', '{$note}', '{$time}', '{$publicity}')";
