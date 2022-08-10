@@ -89,6 +89,21 @@ $page_max = ceil($total / $page_size);
                     <div class="btn-group btn-group-sm">
                         <a class="btn btn-sm m-0 p-1 px-1" href="edit_entry.php?entryID=<?=$entryID?>">Edit</a>
                         <a class="btn btn-sm m-0 p-1 px-1" href="del_entry.php?entryID=<?=$entryID?>">Delete</a>
+                        <a class="btn btn-sm m-0 p-1 px-1" href="del_entry.php?entryID=<?=$entryID?>">Delete</a>
+<?php
+        if($publicity=='pubilc')
+        {
+?>
+                        <a class="btn btn-sm m-0 p-1 px-1" href="make_private.php?entryID=<?=$entryID?>">Make Private</a>
+<?php
+        }
+        else
+        {
+?>
+                        <a class="btn btn-sm m-0 p-1 px-1" href="make_public.php?entryID=<?=$entryID?>">Make Public</a>
+<?php
+        }
+?>
                     </div>
                 </div>
                 <div class="card-footer p-1 px-2 small"><?php echo $datetime; ?></div>
