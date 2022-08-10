@@ -50,15 +50,6 @@ $page_max = ceil($total / $page_size);
         <div class="col-xs-12 w-100 p-3">
             <h1>Search Result</h1>
 <?php
-if($total == 0)
-{
-?>
-            <section class="card my-2">
-                <div class="card-body">There are no entries.</div>
-            </section>
-<?php
-}
-else
 {
     $offset = ($page_num - 1) * $page_size;
 
@@ -78,10 +69,11 @@ else
         $tag_string = $entry['tags'];
         $tags = explode(",", $tag_string);
         $note = $entry['note'];
+        $publicity = $entry['publicity'];
 ?>
             <section class="card my-2">
                 <div class="card-body p-2">
-                    <p class="card-title mb-0"><a href="<?php echo $URL; ?>"><?php echo $title; ?></a></p>
+                    <p class="card-title mb-0"><a href="<?php echo $URL; ?>"><?php echo $title; ?></a> <small>(<?=($publicity=='public')? "public":"private"?>)</small></p>
                     <p class="small mb-1"><?php echo $URL; ?></p>
                     <p class="small my-0"><?php echo $note; ?></p>
                     <p class="my-0">
@@ -97,7 +89,6 @@ else
                     <div class="btn-group btn-group-sm">
                         <a class="btn btn-sm m-0 p-1 px-1" href="edit_entry.php?entryID=<?=$entryID?>">Edit</a>
                         <a class="btn btn-sm m-0 p-1 px-1" href="del_entry.php?entryID=<?=$entryID?>">Delete</a>
-                        <a class="btn btn-sm m-0 p-1 px-1" href="make_public.php?entryID=<?=$entryID?>">Make Public</a>
                     </div>
                 </div>
                 <div class="card-footer p-1 px-2 small"><?php echo $datetime; ?></div>
