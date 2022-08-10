@@ -5,7 +5,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
 {
 ?>
         <form class="mx-2" action="search.php">
-            <input class="form-control" type="text" placeholder="Search">
+            <input class="form-control" type="text" name="keyword" placeholder="Search">
         </form>
 <?php
 }
