@@ -16,7 +16,25 @@ exit;
 
 $flag_loggedin = false;
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
+{
     $flag_loggedin = true;
+}
+else if(isset($_COOKIE['rememberme']))
+{
+    $userID = decryptCookie($_COOKIE['rememberme']);
+
+    $query = "SELECT * from bookmarks_auth WHERE userID='{$userID}'";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_array($result);
+
+    $count = mysqli_num_rows($result);
+
+    if($count == 1)
+    {
+        $_SESSION['loggedin'] = true;
+        $flag_loggedin = true;
+    }
+}
 
 $get_URL = htmlspecialchars_decode($_GET['get_URL']);
 $get_title = htmlspecialchars_decode($_GET['get_title']);
