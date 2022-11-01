@@ -23,7 +23,7 @@ else if(isset($_COOKIE['rememberme']))
 {
     $userID = decryptCookie($_COOKIE['rememberme']);
 
-    $query = "SELECT * from monologue_auth WHERE userID='{$userID}'";
+    $query = "SELECT * from bookmarks_auth WHERE userID='{$userID}'";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_array($result);
 
