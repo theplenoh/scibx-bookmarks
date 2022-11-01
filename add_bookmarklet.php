@@ -3,17 +3,6 @@ require_once "common.php";
 
 session_start();
 
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
-{
-    echo<<<EOT
-<script>
-alert("로그인이 안된 상태입니다.\\n로그인 페이지로 이동합니다.");
-location.href="login.php";
-</script>
-EOT;
-exit;
-}
-
 $flag_loggedin = false;
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
 {
@@ -34,6 +23,17 @@ else if(isset($_COOKIE['rememberme']))
         $_SESSION['loggedin'] = true;
         $flag_loggedin = true;
     }
+}
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
+{
+    echo<<<EOT
+<script>
+alert("로그인이 안된 상태입니다.\\n로그인 페이지로 이동합니다.");
+location.href="login.php";
+</script>
+EOT;
+exit;
 }
 
 $get_URL = htmlspecialchars_decode($_GET['get_URL']);
