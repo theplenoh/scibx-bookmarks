@@ -48,8 +48,8 @@ if(mysqli_stmt_num_rows($stmt) == 1 && password_verify($password, $hashed_passwo
 {
     if($rememberme)
     {
-        $value = encryptCookie($userID)
-        setcookie("rememberme" $value, time()+($expiry_period*24*60*60));
+        $value = encryptCookie($userID);
+        setcookie("rememberme", $value, time()+($expiry_period*24*60*60));
     }
 
     $_SESSION['loggedin'] = true;
