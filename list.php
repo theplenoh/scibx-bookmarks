@@ -16,7 +16,25 @@ exit;
 
 $flag_loggedin = false;
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
+{
     $flag_loggedin = true;
+}
+else if(isset($_COOKIE['rememberme']))
+{
+    $userID = decryptCookie($_COOKIE['rememberme']);
+
+    $query = "SELECT * from monologue_auth WHERE userID='{$userID}'";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_array($result);
+
+    $count = mysqli_num_rows($result);
+
+    if($count == 1)
+    {
+        $_SESSION['loggedin'] = true;
+        $flag_loggedin = true;
+    }
+}
 
 if(!isset($_GET['page_num']))
     $page_num = 1;
