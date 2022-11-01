@@ -32,6 +32,11 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
                     <label for="password">Password: </label>
                     <input type="password" id="password" name="password" class="form-control">
                 </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="rememberme" name="rememberme" value="1"> Remember Me
+                    </label>
+                </div>
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
         </div>
