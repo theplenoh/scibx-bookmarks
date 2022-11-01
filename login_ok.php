@@ -33,7 +33,7 @@ exit;
 $username = sanitize($username);
 $password = sanitize($password);
 
-$query = "SELECT username, password FROM bookmarks_auth WHERE username=?";
+$query = "SELECT userID, username, password FROM bookmarks_auth WHERE username=?";
 $stmt = mysqli_prepare($conn, $query);
 mysqli_stmt_bind_param($stmt, "s", $param_username);
 $param_username = $username;
@@ -41,12 +41,16 @@ $param_username = $username;
 mysqli_stmt_execute($stmt);
 mysqli_stmt_store_result($stmt);
 
-mysqli_stmt_bind_result($stmt, $username, $hashed_password);
+mysqli_stmt_bind_result($stmt, $userID, $username, $hashed_password);
 mysqli_stmt_fetch($stmt);
 
 if(mysqli_stmt_num_rows($stmt) == 1 && password_verify($password, $hashed_password))
 {
-    @session_start();
+    if($rememberme)
+    {
+        $value = encryptCookie($userID)
+        setcookie("rememberme" $value, time()+($expiry_period*24*60*60));
+    }
 
     $_SESSION['loggedin'] = true;
 
