@@ -3,6 +3,7 @@ require_once "common.php";
 
 $username = @trim($_POST['username']);
 $password = @trim($_POST['password']);
+$rememberme = (isset($_POST['rememberme']) && $_POST['rememberme'] == 1)? true:false;
 
 session_start();
 
