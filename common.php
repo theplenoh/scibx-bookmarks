@@ -65,7 +65,7 @@ function encryptCookie($value)
     return base64_encode($ciphertext."::".$iv."::".$key);
 }
 
-function decryptCookie($cipherText)
+function decryptCookie($ciphertext)
 {
     $cipher = "aes-256-cbc";
 
