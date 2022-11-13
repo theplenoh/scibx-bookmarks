@@ -29,6 +29,6 @@ CREATE TABLE bookmarks_auth (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 ```
 
-## Credits
+## Credit(s)
 ### [kafene/netscape-bookmark-parser](https://github.com/kafene/netscape-bookmark-parser)
 This software uses a PHP library that parses Netscape format bookmark files, released under MIT license.
