@@ -13,7 +13,7 @@ $parser = new NetscapeBookmarkParser();
 //$bookmarks = $parser->parseFile('/home/plenoh/Margarin-20220322-1305-wo-notes.html');
 //$bookmarks = $parser->parseFile('/home/plenoh/Margarin-20220404-1736.html');
 //$bookmarks = $parser->parseFile('/home/plenoh/margarin-Unicode.htm');
-$bookmarks = $parser->parseFile('/home/plenoh/margarin-20220810.html');
+$bookmarks = $parser->parseFile('/home/plenoh/Bookmarks/margarin-20220810.html');
 ?>
 <pre>
 <?php
