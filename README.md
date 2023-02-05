@@ -2,6 +2,11 @@
 
 Online web bookmark storage using PHP / MySQL
 
+## JS Bookmarklet
+```
+javascript:location.href='https://my.scibx.org/phpstudies/php-bookmarks/add_bookmarklet.php?get_URL='+encodeURIComponent(location.href)+'&get_title='+encodeURIComponent((document.getSelection().length>0?document.getSelection().substring(0,100):document.title).replace(/\'/g,''));
+```
+
 ## Create SQL Tables
 ### Table `bookmarks_entries`
 ```
