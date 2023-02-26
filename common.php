@@ -76,7 +76,7 @@ function decryptCookie($ciphertext)
 $expiry_period = 7;
 
 /*** database ***/
-require_once "dbinfo.php";
+require_once "config/dbinfo.php";
 
 $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 mysqli_query($conn, "SET NAMES utf8");
