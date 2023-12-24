@@ -87,13 +87,15 @@ if($flag_loggedin)
                     </li>
                 </ul>
             </nav>
+            <div class="row px-3">
+            <main class="col-lg-9 px-0">
 <?php
 if($total == 0)
 {
 ?>
-            <section class="card my-2">
-                <div class="card-body">There are no entries.</div>
-            </section>
+                <section class="card my-2">
+                    <div class="card-body">There are no entries.</div>
+                </section>
 <?php
 }
 else
@@ -116,29 +118,29 @@ else
         $tags = explode(",", $tag_string);
         $note = $entry['note'];
 ?>
-            <section class="card my-2">
-                <div class="card-body p-2">
-                    <p class="card-title mb-0"><a href="<?php echo $URL; ?>"><?php echo $title; ?></a></p>
-                    <p class="small mb-1"><?php echo $URL; ?></p>
-                    <p class="small my-0"><?php echo $note; ?></p>
-                    <p class="my-0">
+                <section class="card my-2">
+                    <div class="card-body p-2">
+                        <p class="card-title mb-0"><a href="<?php echo $URL; ?>"><?php echo unsanitize($title); ?></a></p>
+                        <p class="small mb-1"><?php echo $URL; ?></p>
+                        <p class="small my-0"><?php echo unsanitize($note); ?></p>
+                        <p class="my-0">
 <?php
         foreach($tags as $tag)
         {
 ?>
-                        <span class="badge badge-info"><?php echo $tag; ?></span>
+                            <span class="badge badge-info"><?php echo $tag; ?></span>
 <?php
         }
 ?>
-                    </p>
-                    <div class="btn-group btn-group-sm">
-                        <a class="btn btn-sm m-0 p-1 px-1" href="edit_entry.php?entryID=<?=$entryID?>">Edit</a>
-                        <a class="btn btn-sm m-0 p-1 px-1" href="del_entry.php?entryID=<?=$entryID?>">Delete</a>
-                        <a class="btn btn-sm m-0 p-1 px-1" href="make_public.php?entryID=<?=$entryID?>">Make Public</a>
+                        </p>
+                        <div class="btn-group btn-group-sm">
+                            <a class="btn btn-sm m-0 p-1 px-1" href="edit_entry.php?entryID=<?=$entryID?>">Edit</a>
+                            <a class="btn btn-sm m-0 p-1 px-1" href="del_entry.php?entryID=<?=$entryID?>">Delete</a>
+                            <a class="btn btn-sm m-0 p-1 px-1" href="make_public.php?entryID=<?=$entryID?>">Make Public</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card-footer p-1 px-2 small"><?php echo $datetime; ?></div>
-            </section>
+                    <div class="card-footer p-1 px-2 small"><?php echo $datetime; ?></div>
+                </section>
 <?php
     }
 }
@@ -147,40 +149,52 @@ else
 if($total > 0)
 {
 ?>
-            <section>
-                <ul class="pagination pagination-sm justify-content-center">
-                    <li class="page-item">
+                <section>
+                    <ul class="pagination pagination-sm justify-content-center">
+                        <li class="page-item">
 <?php $prev_block = ($block - 1) * $page_scale + 1; ?>
-                        <a class="page-link" href="<?php if($block > 0) { echo "?page_num={$prev_block}"; } else { echo "javascript:;"; } ?>">&laquo;</a>
-                    </li>
-                    <li class="page-item">
+                            <a class="page-link" href="<?php if($block > 0) { echo "?page_num={$prev_block}"; } else { echo "javascript:;"; } ?>">&laquo;</a>
+                        </li>
+                        <li class="page-item">
 <?php $prev_page = $page_num - 1; ?>
-                        <a class="page-link" href="<?php if($page_max > 1 && $offset != 0 && $page_num && $page_num > 1) { echo "?page_num={$prev_page}"; } else { echo "javascript:;"; } ?>">&lsaquo;</a>
-                    </li>
+                            <a class="page-link" href="<?php if($page_max > 1 && $offset != 0 && $page_num && $page_num > 1) { echo "?page_num={$prev_page}"; } else { echo "javascript:;"; } ?>">&lsaquo;</a>
+                        </li>
 <?php
     $start_page = $block * $page_scale + 1;
     for($i=1; $i<=$page_scale && $start_page<=$page_max; $i++, $start_page++)
     {
 ?>
-                    <li class="page-item<?php if($start_page == $page_num) { echo " active"; } ?>">
-                        <a class="page-link" href="<?php if($start_page == $page_num) { echo "javascript:;"; } else { echo "?page_num={$start_page}"; }; ?>"><?php echo "{$start_page}"; ?></a>
-                    </li>
+                        <li class="page-item<?php if($start_page == $page_num) { echo " active"; } ?>">
+                            <a class="page-link" href="<?php if($start_page == $page_num) { echo "javascript:;"; } else { echo "?page_num={$start_page}"; }; ?>"><?php echo "{$start_page}"; ?></a>
+                        </li>
 <?php
     }
 ?>
-                    <li class="page-item">
+                        <li class="page-item">
 <?php $next_page = $page_num + 1; ?>
-                        <a class="page-link" href="<?php if($page_max > $page_num) { echo "?page_num={$next_page}"; } else { echo "javascript:;"; } ?>">&rsaquo;</a>
-                    </li>
-                    <li class="page-item">
+                            <a class="page-link" href="<?php if($page_max > $page_num) { echo "?page_num={$next_page}"; } else { echo "javascript:;"; } ?>">&rsaquo;</a>
+                        </li>
+                        <li class="page-item">
 <?php $next_block = ($block + 1)*$page_scale + 1; ?>
-                        <a class="page-link" href="<?php if($page_max > ($block + 1)*$page_scale) { echo "?page_num={$next_block}"; } else { echo "javascript:;"; } ?>">&raquo;</a>
-                    </li>
-                </ul>
-            </section>
+                            <a class="page-link" href="<?php if($page_max > ($block + 1)*$page_scale) { echo "?page_num={$next_block}"; } else { echo "javascript:;"; } ?>">&raquo;</a>
+                        </li>
+                    </ul>
+                </section>
 <?php
 }
 ?>
+            </main>
+            <aside class="col-lg-3 px-0 pl-lg-4">
+                <section class="card mt-2 mb-3">
+                    <p class="card-header p-2 pl-3">Admin</p>
+                    <div class="card-body p-2">
+                        <ul class="mb-0 pl-4">
+                            <li><a href="migration.php">Migration</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </aside>
+            </div>
         </div>
     </div>
 </div>

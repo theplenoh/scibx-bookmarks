@@ -10,7 +10,11 @@ ini_set("display_errors", 1);
 /*** lib ***/
 function sanitize($text)
 {
-    return htmlentities(addslashes($text));
+    return htmlspecialchars(addslashes($text));
+}
+function unsanitize($text)
+{
+    return stripslashes(htmlspecialchars_decode($text));
 }
 
 function filter($text)
