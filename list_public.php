@@ -68,13 +68,14 @@ if($flag_loggedin)
                     </li>
                 </ul>
             </nav>
+            <main>
 <?php
 if($total == 0)
 {
 ?>
-            <section class="card my-2">
-                <div class="card-body">There are no entries.</div>
-            </section>
+                <section class="card my-2">
+                    <div class="card-body">There are no entries.</div>
+                </section>
 <?php
 }
 else
@@ -97,26 +98,26 @@ else
         $tags = explode(",", $tag_string);
         $note = $entry['note'];
 ?>
-            <section class="card my-2">
-                <div class="card-body p-2">
-                    <p class="card-title mb-0"><a href="<?php echo $URL; ?>"><?php echo $title; ?></a></p>
-                    <p class="small mb-1"><?php echo $URL; ?></p>
-                    <p class="small my-0"><?php echo $note; ?></p>
-                    <p class="my-0">
+                <section class="card my-2">
+                    <div class="card-body p-2">
+                        <p class="card-title mb-0"><a href="<?php echo $URL; ?>"><?php echo unsanitize($title); ?></a></p>
+                        <p class="small mb-1"><?php echo $URL; ?></p>
+                        <p class="small my-0"><?php echo unsanitize($note); ?></p>
+                        <p class="my-0">
 <?php
         foreach($tags as $tag)
         {
 ?>
-                        <span class="badge badge-info"><?php echo $tag; ?></span>
+                            <span class="badge badge-info"><?php echo $tag; ?></span>
 <?php
         }
 ?>
-                    </p>
+                        </p>
 <?php
         if($flag_loggedin)
         {
 ?>
-                    <div class="btn-group btn-group-sm">
+                        <div class="btn-group btn-group-sm">
 <?php
         }
 ?>
@@ -131,17 +132,18 @@ else
         if($flag_loggedin)
         {
 ?>
-                    </div>
+                        </div>
 <?php
         }
 ?>
-                </div>
-                <div class="card-footer p-1 px-2 small"><?php echo $datetime; ?></div>
-            </section>
+                    </div>
+                    <div class="card-footer p-1 px-2 small"><?php echo $datetime; ?></div>
+                </section>
 <?php
     }
 }
 ?>
+            </main>
 <?php
 if($total > 0)
 {
