@@ -1,4 +1,5 @@
-backups/*
+backups/*.xml
+backups/*.html
 input/
 dbinfo.php
 test.php
