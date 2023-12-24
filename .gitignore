@@ -1,3 +1,4 @@
+backups/*
 input/
 dbinfo.php
 test.php
