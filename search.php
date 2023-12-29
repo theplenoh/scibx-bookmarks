@@ -95,9 +95,9 @@ $page_max = ceil($total / $page_size);
 ?>
             <section class="card my-2">
                 <div class="card-body p-2">
-                    <p class="card-title mb-0"><a href="<?php echo $URL; ?>"><?php echo unsanitize($title); ?></a> <small>(<?=($publicity=='public')? "public":"private"?>)</small></p>
+                    <p class="card-title mb-0"><a href="<?php echo $URL; ?>"><?php echo $title; ?></a> <small>(<?=($publicity=='public')? "public":"private"?>)</small></p>
                     <p class="small mb-1"><?php echo $URL; ?></p>
-                    <p class="small my-0"><?php echo unsanitize($note); ?></p>
+                    <p class="small my-0"><?php echo $note; ?></p>
                     <p class="my-0">
 <?php
         foreach($tags as $tag)
