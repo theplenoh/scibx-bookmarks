@@ -10,7 +10,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
 }
 else if(isset($_COOKIE['rememberme']))
 {
-    $userID = decryptCookie($_COOKIE['rememberme']);
+    $userID = decrypt_cookie($_COOKIE['rememberme']);
 
     $query = "SELECT * from bookmarks_auth WHERE userID='{$userID}'";
     $result = mysqli_query($conn, $query);
