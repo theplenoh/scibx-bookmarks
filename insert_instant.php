@@ -1,5 +1,13 @@
 <?php
 require_once "common.php";
+include_once "simple-html-dom-parser/simple_html_dom.php";
+
+function get_page_title($url)
+{
+    $html = file_get_html($url);
+
+    return $html->find('title', 0)->innertext;
+}
 
 session_start();
 
@@ -19,7 +27,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
     $flag_loggedin = true;
 
 $URL = $_POST['URL'];
-$title = page_title($URL);
+$title = get_page_title($URL);
 $time = date("Y-m-d H:i:s", time());
 $publicity = "private";
 
