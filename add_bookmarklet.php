@@ -36,8 +36,8 @@ EOT;
 exit;
 }
 
-$get_URL = htmlspecialchars_decode($_GET['get_URL']);
-$get_title = htmlspecialchars_decode($_GET['get_title']);
+$get_URL = sanitize($_GET['get_URL']);
+$get_title = sanitize($_GET['get_title']);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
