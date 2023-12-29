@@ -19,7 +19,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
     $flag_loggedin = true;
 
 $URL = $_POST['URL'];
-$title = $_POST['title'];
+$title = sanitize($_POST['title']);
 $note = $_POST['note'];
 $time = date("Y-m-d H:i:s", time());
 $publicity = "private";
