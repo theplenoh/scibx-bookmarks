@@ -40,7 +40,7 @@ function get_day($date, $locale)
     }
 }
 
-function encryptCookie($value)
+function encrypt_cookie($value)
 {
     $key = bin2hex(openssl_random_pseudo_bytes(4));
 
@@ -53,7 +53,7 @@ function encryptCookie($value)
     return base64_encode($ciphertext."::".$iv."::".$key);
 }
 
-function decryptCookie($ciphertext)
+function decrypt_cookie($ciphertext)
 {
     $cipher = "aes-256-cbc";
 
