@@ -40,21 +40,6 @@ function get_day($date, $locale)
     }
 }
 
-function page_title($url)
-{
-    $fp = file_get_contents($url);
-    if (!$fp)
-        return "(Could Not Open the Link)";
-
-    $res = preg_match("/<title>(.*)<\/title>/siU", $fp, $title_matches);
-    if (!$res)
-        return "(No title)";
-
-    // Clean up title: remove EOL's and excessive whitespace.
-    $title = preg_replace('/\s+/', ' ', $title_matches[1]);
-    return $title;
-}
-
 function encryptCookie($value)
 {
     $key = bin2hex(openssl_random_pseudo_bytes(4));
