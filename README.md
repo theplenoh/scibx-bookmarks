@@ -36,7 +36,10 @@ CREATE TABLE bookmarks_auth (
 
 ## Credit(s)
 ### [kafene/netscape-bookmark-parser](https://github.com/kafene/netscape-bookmark-parser)
-This software uses a PHP library that parses Netscape format bookmark files, released under MIT license.
+This software uses a PHP library, released under MIT license, that parses Netscape format bookmark files.
+
+### [Simple HTML DOM Parser](https://simplehtmldom.sourceforge.io)
+This software uses this library, released under MIT license, to retrieve the title of a web page link.
 
 ## License Info.
 This repository is open to public under GPL v2 license.
