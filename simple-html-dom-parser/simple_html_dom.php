@@ -45,50 +45,24 @@ defined('DEFAULT_SPAN_TEXT') || define('DEFAULT_SPAN_TEXT', ' ');
 defined('MAX_FILE_SIZE') || define('MAX_FILE_SIZE', 600000);
 define('HDOM_SMARTY_AS_TEXT', 1);
 
-function file_get_html(
-	$url,
-	$use_include_path = false,
-	$context = null,
-	$offset = 0,
-	$maxLen = -1,
-	$lowercase = true,
-	$forceTagsClosed = true,
-	$target_charset = DEFAULT_TARGET_CHARSET,
-	$stripRN = true,
-	$defaultBRText = DEFAULT_BR_TEXT,
-	$defaultSpanText = DEFAULT_SPAN_TEXT)
+function curl_get_contents($url)
 {
-	if($maxLen <= 0) { $maxLen = MAX_FILE_SIZE; }
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Scibx-Bookmarks');
+    $data = curl_exec($ch);
+    curl_close($ch);
+    return $data;
+}
 
-	$dom = new simple_html_dom(
-		null,
-		$lowercase,
-		$forceTagsClosed,
-		$target_charset,
-		$stripRN,
-		$defaultBRText,
-		$defaultSpanText
-	);
-
-	/**
-	 * For sourceforge users: uncomment the next line and comment the
-	 * retrieve_url_contents line 2 lines down if it is not already done.
-	 */
-	$contents = file_get_contents(
-		$url,
-		$use_include_path,
-		$context,
-		$offset,
-		$maxLen
-	);
-	// $contents = retrieve_url_contents($url);
-
-	if (empty($contents) || strlen($contents) > $maxLen) {
-		$dom->clear();
-		return false;
-	}
-
-	return $dom->load($contents, $lowercase, $stripRN);
+function file_get_html()
+{
+    $dom = new simple_html_dom;
+    $args = func_get_args();
+    $dom->load(call_user_func_array('curl_get_contents', $args), true);
+    return $dom;
 }
 
 function str_get_html(
