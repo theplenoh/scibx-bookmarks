@@ -6,7 +6,12 @@ function get_page_title($url)
 {
     $html = file_get_html($url);
 
-    return $html->find('title', 0)->innertext;
+    $title = $html->find('title', 0)->innertext;
+
+    if (mb_detect_encoding($title, "UTF-8, EUC-KR") == "EUC-KR")
+        $title = iconv("EUC-KR", "UTF-8", $title);
+
+    return $title;
 }
 
 session_start();
