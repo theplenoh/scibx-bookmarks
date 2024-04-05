@@ -69,5 +69,5 @@ require_once "config/dbinfo.php";
 $db_prefix = DB_PREFIX;
 
 $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-mysqli_query($conn, "SET NAMES utf8");
+mysqli_query($conn, "SET NAMES utf8mb4");
 ?>
