@@ -21,7 +21,7 @@ CREATE TABLE bookmarks_entries (
     time varchar(19), 
     publicity varchar(15) NOT NULL, 
     PRIMARY KEY(entryID)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 ### Table `bookmarks_auth`
 ```
@@ -31,7 +31,7 @@ CREATE TABLE bookmarks_auth (
     password varchar(255) NOT NULL, 
     screenname varchar(45) NOT NULL, 
     PRIMARY KEY(userID)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
 ## Credit(s)
