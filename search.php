@@ -92,6 +92,7 @@ $page_max = ceil($total / $page_size);
         $tags = explode(",", $tag_string);
         $note = $entry['note'];
         $publicity = $entry['publicity'];
+        $pinned = (int)$entry['pinned'];
 ?>
             <section class="card my-2">
                 <div class="card-body p-2">
@@ -122,6 +123,20 @@ $page_max = ceil($total / $page_size);
         {
 ?>
                         <a class="btn btn-sm m-0 p-1 px-1" href="make_public.php?entryID=<?=$entryID?>">Make Public</a>
+<?php
+        }
+?>
+<?php
+        if(!$pinned)
+        {
+?>
+                        <a class="btn btn-sm m-0 p-1 px-1" href="pin_entry.php?entryID=<?php echo $entry['entryID']; ?>">Pin</a>
+<?php
+        }
+        else
+        {
+?>
+                        <a class="btn btn-sm m-0 p-1 px-1" href="unpin_entry.php?entryID=<?php echo $entry['entryID']; ?>">Unpin</a>
 <?php
         }
 ?>
