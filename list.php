@@ -104,7 +104,7 @@ else
 
     $block = floor(($page_num - 1) / $page_scale);
 
-    $query = "SELECT * FROM bookmarks_entries WHERE publicity = 'private' ORDER BY time DESC LIMIT ${offset}, ${page_size}";
+    $query = "SELECT * FROM bookmarks_entries WHERE publicity = 'private' ORDER BY pinned DESC, time DESC LIMIT ${offset}, ${page_size}";
     $result = mysqli_query($conn, $query);
 ?>
 <?php
@@ -117,10 +117,11 @@ else
         $tag_string = $entry['tags'];
         $tags = explode(",", $tag_string);
         $note = $entry['note'];
+        $pinned = (int)$entry['pinned'];
 ?>
                 <section class="card my-2">
                     <div class="card-body p-2">
-                        <p class="card-title mb-0"><a href="<?php echo $URL; ?>"><?php echo $title; ?></a></p>
+                    <p class="card-title mb-0"><?php if($pinned) echo "<img alt=\"pinned\" class=\"icon\" src=\"images/red-pin-256.png\">"; ?><a href="<?php echo $URL; ?>"><?php echo $title; ?></a> <?php if($pinned) echo "<small class=\"small\">(Pinned)</small>"; ?></p>
                         <p class="small mb-1"><?php echo $URL; ?></p>
                         <p class="small my-0"><?php echo $note; ?></p>
                         <p class="my-0">
@@ -137,6 +138,20 @@ else
                             <a class="btn btn-sm m-0 p-1 px-1" href="edit_entry.php?entryID=<?=$entryID?>">Edit</a>
                             <a class="btn btn-sm m-0 p-1 px-1" href="del_entry.php?entryID=<?=$entryID?>">Delete</a>
                             <a class="btn btn-sm m-0 p-1 px-1" href="make_public.php?entryID=<?=$entryID?>">Make Public</a>
+<?php
+        if(!$pinned)
+        {
+?>
+                            <a class="btn btn-sm m-0 p-1 px-1" href="pin_entry.php?entryID=<?php echo $entry['entryID']; ?>">Pin</a>
+<?php
+        }
+        else
+        {
+?>
+                            <a class="btn btn-sm m-0 p-1 px-1" href="unpin_entry.php?entryID=<?php echo $entry['entryID']; ?>">Unpin</a>
+<?php
+        }
+?>
                         </div>
                     </div>
                     <div class="card-footer p-1 px-2 small"><?php echo $datetime; ?></div>
