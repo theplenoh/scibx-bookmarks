@@ -84,7 +84,7 @@ else
 
     $block = floor(($page_num - 1) / $page_scale);
 
-    $query = "SELECT * FROM bookmarks_entries WHERE publicity = 'public' ORDER BY time DESC LIMIT ${offset}, ${page_size}";
+    $query = "SELECT * FROM bookmarks_entries WHERE publicity = 'public' ORDER BY pinned DESC, time DESC LIMIT ${offset}, ${page_size}";
     $result = mysqli_query($conn, $query);
 ?>
 <?php
@@ -97,10 +97,11 @@ else
         $tag_string = $entry['tags'];
         $tags = explode(",", $tag_string);
         $note = $entry['note'];
+        $pinned = (int)$entry['pinned'];
 ?>
                 <section class="card my-2">
                     <div class="card-body p-2">
-                        <p class="card-title mb-0"><a href="<?php echo $URL; ?>"><?php echo $title; ?></a></p>
+                        <p class="card-title mb-0"><?php if($pinned) echo "<img alt=\"pinned\" class=\"icon\" src=\"images/red-pin-256.png\">"; ?><a href="<?php echo $URL; ?>"><?php echo $title; ?></a> <?php if($pinned) echo "<small class=\"small\">(Pinned)</small>"; ?></p>
                         <p class="small mb-1"><?php echo $URL; ?></p>
                         <p class="small my-0"><?php echo $note; ?></p>
                         <p class="my-0">
@@ -121,13 +122,17 @@ else
 <?php
         }
 ?>
-<?php
-/*
-                        <a class="btn btn-sm m-0 p-1 px-1">Edit</a>
-                        <a class="btn btn-sm m-0 p-1 px-1">Delete</a>
-*/
-?>
 <?php if($flag_loggedin) { echo "<a class=\"btn btn-sm m-0 p-1 px-1\" href=\"make_private.php?entryID=$entryID\">Make Private</a>"; } else { echo ""; } ?>
+<?php
+        if($flag_loggedin && !$pinned)
+        {
+            echo "<a class=\"btn btn-sm m-0 p-1 px-1\" href=\"pin_entry.php?entryID=$entryID\">Pin</a>";
+        }
+        else if($flag_loggedin && $pinned)
+        {
+            echo "<a class=\"btn btn-sm m-0 p-1 px-1\" href=\"unpin_entry.php?entryID=$entryID\">Unpin</a>";
+        }
+?>
 <?php
         if($flag_loggedin)
         {

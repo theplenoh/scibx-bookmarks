@@ -4,3 +4,9 @@
 .navbar form { width: 175px; }
 
 .result { height: 25rem; }
+
+img.icon {
+    width: 18px;
+    height: auto;
+    margin: 0 3px 3px;
+}
