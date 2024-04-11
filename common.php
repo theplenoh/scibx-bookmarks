@@ -62,7 +62,7 @@ function decrypt_cookie($ciphertext)
     return openssl_decrypt($encrypted_data, $cipher, $key, 0, $iv);
 }
 
-$expiry_period = 7;
+$expiry_period = 30;
 
 /*** database ***/
 require_once "config/dbinfo.php";
