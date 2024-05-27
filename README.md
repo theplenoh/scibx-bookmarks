@@ -1,6 +1,11 @@
 # php-bookmarks
 
-Online web bookmark storage using PHP / MySQL
+This is a web bookmark storage application run in a LAMP server environment.  
+
+It is inspired by Delicious and Mar.gar.in(<http://mar.gar.in/>).  
+
+You can build a self-hosted online bookmark storage with this application.  
+
 
 ## JS Bookmarklet
 ```
