@@ -7,7 +7,21 @@ Online web bookmark storage using PHP / MySQL
 javascript:location.href='https://my.scibx.org/scibx-bookmarks/add_bookmarklet.php?get_URL='+encodeURIComponent(location.href)+'&get_title='+encodeURIComponent((document.getSelection().length>0?document.getSelection().substring(0,100):document.title).replace(/\'/g,''));
 ```
 
-## Create SQL Tables
+## Requirement
+Packages `php-curl`, `php-mbstring`, `php-xml` are required.
+
+## Installation
+### Adjust the permission of a few directories
+```
+$ chmod 0707 config/ backups/
+```
+
+### Run the installer
+1. Open `https://{$your-server}/php-bookmarks/setup.php` page via your web browser.
+2. Enter all the necessary information in the form.
+3. Click 'Submit' to run the installer.
+
+## SQL Table Info.
 ### Table `bookmarks_entries`
 ```
 CREATE TABLE bookmarks_entries (
