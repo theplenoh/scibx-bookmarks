@@ -104,7 +104,7 @@ else
 
     $block = floor(($page_num - 1) / $page_scale);
 
-    $query = "SELECT * FROM bookmarks_entries WHERE publicity = 'private' ORDER BY pinned DESC, time DESC LIMIT ${offset}, ${page_size}";
+    $query = "SELECT * FROM bookmarks_entries WHERE publicity = 'private' ORDER BY pinned DESC, time DESC LIMIT {$offset}, {$page_size}";
     $result = mysqli_query($conn, $query);
 ?>
 <?php
@@ -115,7 +115,7 @@ else
         $URL = $entry['URL'];
         $datetime = $entry['time'];
         $tag_string = $entry['tags'];
-        $tags = explode(",", $tag_string);
+        $tags = explode(",", (string)$tag_string);
         $note = $entry['note'];
         $pinned = (int)$entry['pinned'];
 ?>
