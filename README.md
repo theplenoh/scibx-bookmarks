@@ -8,14 +8,15 @@ You can build a self-hosted online bookmark storage with this application.
 
 The application provides Import/Export features to back up your bookmarks in both XML and Netscape HTML format. Most modern web browsers are capable of importing Netscape HTML bookmark files.  
 
-
+## A Sample Installation
+<https://my.scibx.org/scibx-boomarks/>
 
 ## JS Bookmarklet
 ```
 javascript:location.href='https://my.scibx.org/scibx-bookmarks/add_bookmarklet.php?get_URL='+encodeURIComponent(location.href)+'&get_title='+encodeURIComponent((document.getSelection().length>0?document.getSelection().substring(0,100):document.title).replace(/\'/g,''));
 ```
 
-## Requirement
+## Requirements
 Packages `php-curl`, `php-mbstring`, `php-xml` are required.
 
 ## Installation
