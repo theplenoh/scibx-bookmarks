@@ -20,6 +20,7 @@ CREATE TABLE bookmarks_entries (
     subcategory varchar(45), 
     time varchar(19), 
     publicity varchar(15) NOT NULL, 
+    pinned tinyint NOT NULL DEFAULT '0', 
     PRIMARY KEY(entryID)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
