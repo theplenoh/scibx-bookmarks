@@ -9,7 +9,7 @@ You can build a self-hosted online bookmark storage with this application.
 The application provides Import/Export features to back up your bookmarks in both XML and Netscape HTML format. Most modern web browsers are capable of importing Netscape HTML bookmark files.  
 
 ## A Sample Installation
-<https://my.scibx.org/scibx-boomarks/>
+<https://my.scibx.org/scibx-bookmarks/>
 
 ## JS Bookmarklet
 ```
