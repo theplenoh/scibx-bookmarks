@@ -2,9 +2,12 @@
 
 This is a web bookmark storage application run in a LAMP server environment.  
 
-It is inspired by Delicious and Mar.gar.in(<http://mar.gar.in/>).  
+It is inspired by Delicious and Mar.gar.in(<http://mar.gar.in>).  
 
 You can build a self-hosted online bookmark storage with this application.  
+
+The application provides Import/Export features to back up your bookmarks in both XML and Netscape HTML format. Most modern web browsers are capable of importing Netscape HTML bookmark files.  
+
 
 
 ## JS Bookmarklet
