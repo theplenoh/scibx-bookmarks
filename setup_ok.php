@@ -68,18 +68,6 @@ $tablename_entries = $db_prefix."entries";
 
 $conn = mysqli_connect($db_server, $db_username, $db_password, $db_database);
 mysqli_query($conn, "SET NAMES utf8");
-
-// if DB tables exist
-if (mysqli_query($conn, "SELECT 1 FROM {$tablename_auth} LIMIT 1") !== FALSE)
-{
-    echo "<p>The table <code>{$tablename_auth}</code> already exists.</p>";
-    exit;
-}
-if (mysqli_query($conn, "SELECT 1 FROM {$tablename_entries} LIMIT 1") !== FALSE)
-{
-    echo "<p>The table <code>{$tablename_entries}</code> already exists.</p>";
-    exit;
-}
 ?>
 <?php
 // Create `dbinfo.php` file
