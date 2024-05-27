@@ -9,7 +9,7 @@ session_start();
 
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
 {
-$message = "이미 로그인 된 상태입니다.";
+$message = "You are already logged in.";
 echo<<<EOT
 <script>
 alert("{$message}");
@@ -21,7 +21,7 @@ exit;
 
 if(empty($username) || empty($password))
 {
-$message = "아이디와 패스워드를 입력해주세요.";
+$message = "Please enter your username and the password.";
 echo<<<EOT
 <script>
 alert("{$message}");
@@ -55,7 +55,7 @@ if(mysqli_stmt_num_rows($stmt) == 1 && password_verify($password, $hashed_passwo
 
     $_SESSION['loggedin'] = true;
 
-    $message = "로그인에 성공하였습니다.";
+    $message = "Successfully logged in!";
     echo<<<EOT
     <script>
     //alert("{$message}");
@@ -66,7 +66,7 @@ if(mysqli_stmt_num_rows($stmt) == 1 && password_verify($password, $hashed_passwo
 }
 else
 {
-    $message = "유효한 아이디나 패스워드가 아닙니다.";
+    $message = "Invalid username or password!";
     echo<<<EOT
     <script>
     alert("{$message}");

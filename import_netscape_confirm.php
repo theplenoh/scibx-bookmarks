@@ -6,7 +6,7 @@ session_start();
 
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true)
 {
-$message = "로그인을 해주세요.";
+$message = "Please log in.";
 echo<<<EOT
 <script>
 alert("{$message}");
