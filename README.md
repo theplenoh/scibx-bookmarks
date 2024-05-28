@@ -26,9 +26,13 @@ $ chmod 0707 config/ backups/
 ```
 
 ### Run the installer
-1. Open `https://{$your-server}/php-bookmarks/setup.php` page via your web browser.
-2. Enter all the necessary information in the form.
-3. Click 'Submit' to run the installer.
+1. Clone this GitHub repository to your server.
+```
+$ git clone https://github.com/theplenoh/php-bookmarks.git
+```
+2. Open `https://{$your-server}/php-bookmarks/setup.php` page via your web browser.
+3. Enter all the necessary information in the form.
+4. Click 'Submit' to run the installer.
 
 ## SQL Table Info.
 ### Table `bookmarks_entries`
