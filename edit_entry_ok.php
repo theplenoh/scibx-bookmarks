@@ -20,8 +20,8 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
 
 $entryID = $_GET['entryID'];
 $URL = $_POST['URL'];
-$title = $_POST['title'];
-$note = $_POST['note'];
+$title = sanitize($_POST['title']);
+$note = sanitize($_POST['note']);
 
 mysqli_query($conn, "UPDATE bookmarks_entries SET URL='{$URL}', title='{$title}', note='{$note}' WHERE entryID = {$entryID}");
 echo<<<EOT
