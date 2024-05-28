@@ -37,7 +37,7 @@ exit;
 }
 
 $get_URL = sanitize($_GET['get_URL']);
-$get_title = sanitize($_GET['get_title']);
+$get_title = htmlspecialchars($_GET['get_title']);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
