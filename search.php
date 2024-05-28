@@ -40,7 +40,7 @@ $flag_loggedin = false;
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
     $flag_loggedin = true;
 
-$keyword = $_GET['keyword'];
+$keyword = sanitize($_GET['keyword']);
 
 if(!isset($_GET['page_num']))
     $page_num = 1;
@@ -80,7 +80,7 @@ $page_max = ceil($total / $page_size);
     $query = "SELECT * FROM bookmarks_entries WHERE title LIKE '%{$keyword}%' or note LIKE '%{$keyword}%' ORDER BY time DESC LIMIT {$offset}, {$page_size};";
     $result = mysqli_query($conn, $query);
 ?>
-<p>You have found <?=$total?> entries using the keyword <code><?=$keyword?></code>.</p>
+<p>You have found <?=$total?> entries using the keyword <code><?=unsanitize($keyword)?></code>.</p>
 <?php
     while($entry = mysqli_fetch_array($result))
     {
