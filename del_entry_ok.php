@@ -23,7 +23,7 @@ $entryID = $_GET['entryID'];
 mysqli_query($conn, "DELETE FROM bookmarks_entries WHERE entryID='{$entryID}'");
 echo<<<EOT
 <script>
-alert("삭제되었습니다.");
+alert("Sucessfully deleted!");
 location.href="list.php";
 </script>
 EOT;
