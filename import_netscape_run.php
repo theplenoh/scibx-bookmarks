@@ -37,17 +37,6 @@ set_time_limit(0);
 
 require_once "netscape-bookmark-parser/NetscapeBookmarkParser.php";
 $parser = new NetscapeBookmarkParser();
-//$bookmarks = $parser->parseFile('./tests/input/netscape_basic.htm');
-//$bookmarks = $parser->parseFile('./tests/input/firefox_nested.htm');
-//$bookmarks = $parser->parseFile('/home/plenoh/Bookmarks-firefox.html');
-//$bookmarks = $parser->parseFile('/home/plenoh/Bookmarks-margarin.html');
-//$bookmarks = $parser->parseFile('/home/plenoh/Bookmarks-wekiwebxh.html');
-//$bookmarks = $parser->parseFile('/home/plenoh/Bookmarks.html');
-//$bookmarks = $parser->parseFile('/home/plenoh/bookmark.htm');
-//$bookmarks = $parser->parseFile('/home/plenoh/Margarin-20220322-1305-wo-notes.html');
-//$bookmarks = $parser->parseFile('/home/plenoh/Margarin-20220404-1736.html');
-//$bookmarks = $parser->parseFile('/home/plenoh/margarin-Unicode.htm');
-//$bookmarks = $parser->parseFile('/home/plenoh/Bookmarks/margarin-20220810.html');
 
 $filename = $_POST['backup-file'];
 $bookmarks = $parser->parseFile("backups/{$filename}") or die("Parser Error");
