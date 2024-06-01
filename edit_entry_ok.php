@@ -26,7 +26,7 @@ $note = sanitize($_POST['note']);
 mysqli_query($conn, "UPDATE bookmarks_entries SET URL='{$URL}', title='{$title}', note='{$note}' WHERE entryID = {$entryID}");
 echo<<<EOT
 <script>
-alert("Successfully Edited!");
+alert("Successfully edited!");
 location.href="list.php";
 </script>
 EOT;
