@@ -32,7 +32,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true)
     $flag_loggedin = true;
 
 $URL = $_POST['URL'];
-$title = get_page_title($URL);
+$title = addslashes(get_page_title($URL));
 $time = date("Y-m-d H:i:s", time());
 $publicity = "private";
 
