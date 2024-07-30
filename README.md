@@ -20,19 +20,18 @@ javascript:location.href='https://my.scibx.org/scibx-bookmarks/add_bookmarklet.p
 Packages `php-curl`, `php-mbstring`, `php-xml` are required.
 
 ## Installation
-### Adjust the permission of a few directories
-```
-$ chmod 0707 config/ backups/
-```
-
-### Run the installer
 1. Clone this GitHub repository to your server.
 ```
 $ git clone https://github.com/theplenoh/php-bookmarks.git
 ```
-2. Open `https://{$your-server}/php-bookmarks/setup.php` page via your web browser.
-3. Enter all the necessary information in the form.
-4. Click 'Submit' to run the installer.
+2. Adjust the permission of a few subdirectories
+```
+$ cd php-bookmarks/
+$ chmod 0707 config/ backups/
+```
+3. To run the installer, open `https://{$your-server}/php-bookmarks/setup.php` page via your web browser.
+4. Enter all the necessary information in the form.
+5. Click 'Submit' to run the installer.
 
 ## SQL Table Info.
 ### Table `bookmarks_entries`
