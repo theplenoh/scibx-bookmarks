@@ -1,4 +1,4 @@
-# scibx-bookmarks
+# Scibx Bookmarks
 
 This is a web bookmark storage application that runs in a LAMP server environment. It will run in an environment with PHP 7 or higher and MySQL installed.  
 
