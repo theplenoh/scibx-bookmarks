@@ -1,7 +1,4 @@
 *.swp
 backups/*.xml
 backups/*.html
-input/
-dbinfo.php
-test.php
-insert_bookmarks_auth_record.php
+config/dbinfo.php
