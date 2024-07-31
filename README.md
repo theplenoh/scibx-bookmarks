@@ -12,6 +12,7 @@ The application provides Import/Export features to back up your bookmarks in bot
 <https://my.scibx.org/scibx-bookmarks/>
 
 ## JS Bookmarklet
+You can add a JavaScript bookmarklet to your web browser's bookmarks toolbar and quickly add the current web page to your online storage.
 ```
 javascript:location.href='https://my.scibx.org/scibx-bookmarks/add_bookmarklet.php?get_URL='+encodeURIComponent(location.href)+'&get_title='+encodeURIComponent((document.getSelection().length>0?document.getSelection().substring(0,100):document.title).replace(/\'/g,''));
 ```
