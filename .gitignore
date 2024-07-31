@@ -1,3 +1,4 @@
+*.swp
 backups/*.xml
 backups/*.html
 input/
