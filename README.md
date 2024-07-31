@@ -20,7 +20,7 @@ javascript:location.href='https://my.scibx.org/scibx-bookmarks/add_bookmarklet.p
 ## Requirements
 Packages `php-curl`, `php-mbstring`, `php-xml` are required.
 
-## Installation
+## Installation Steps
 1. Clone this GitHub repository to your server.
 ```
 $ git clone https://github.com/theplenoh/scibx-bookmarks.git
@@ -33,6 +33,7 @@ $ chmod 0707 config/ backups/
 3. To run the installer, open `https://{$your-server}/scibx-bookmarks/setup.php` page via your web browser.
 4. Enter all the necessary information in the form.
 5. Click 'Submit' to run the installer.
+6. After the installation completes, you should be able to access the application via the URL `https://{$your-server}/scibx-bookmarks`.
 
 ## SQL Table Info.
 ### Table `bookmarks_entries`
