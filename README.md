@@ -1,6 +1,6 @@
 # scibx-bookmarks
 
-This is a web bookmark storage application that runs in a LAMP server environment.  
+This is a web bookmark storage application that runs in a LAMP server environment. It will run in an environment with PHP 7 or higher and MySQL installed.  
 
 It is inspired by Delicious and Mar.gar.in(<http://mar.gar.in>).  
 
