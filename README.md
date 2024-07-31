@@ -1,4 +1,4 @@
-# php-bookmarks
+# scibx-bookmarks
 
 This is a web bookmark storage application that runs in a LAMP server environment.  
 
@@ -22,14 +22,14 @@ Packages `php-curl`, `php-mbstring`, `php-xml` are required.
 ## Installation
 1. Clone this GitHub repository to your server.
 ```
-$ git clone https://github.com/theplenoh/php-bookmarks.git
+$ git clone https://github.com/theplenoh/scibx-bookmarks.git
 ```
 2. Adjust the permission of a few subdirectories
 ```
-$ cd php-bookmarks/
+$ cd scibx-bookmarks/
 $ chmod 0707 config/ backups/
 ```
-3. To run the installer, open `https://{$your-server}/php-bookmarks/setup.php` page via your web browser.
+3. To run the installer, open `https://{$your-server}/scibx-bookmarks/setup.php` page via your web browser.
 4. Enter all the necessary information in the form.
 5. Click 'Submit' to run the installer.
 
