@@ -46,7 +46,7 @@ while($record = mysqli_fetch_array($result, MYSQLI_NUM))
     $entry['note'] = $record[2];
     $entry['tags'] = $record[3];
     $tag_string = $entry['tags'];
-    $tags = explode(",", $tag_string);
+    $tags = explode(",", (string)$tag_string);
     $entry['time'] = $record[4];
     $entry['publicity'] = ($record[5] == "public")? "public":"private";
 
@@ -60,7 +60,7 @@ while($record = mysqli_fetch_array($result, MYSQLI_NUM))
             $xml .= "\n  ";
             foreach($tags as $tagname => $tag_content)
             {
-                if(trim($content) != "")
+                if(trim((string)$content) != "")
                 {
                     $xml .= "  <tag>";
                     $xml .= sanitize($tag_content);
