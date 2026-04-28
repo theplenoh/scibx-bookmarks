@@ -77,7 +77,7 @@ $page_max = ceil($total / $page_size);
 
     $block = floor(($page_num - 1) / $page_scale);;
 
-    $query = "SELECT * FROM bookmarks_entries WHERE title LIKE '%{$keyword}%' or note LIKE '%{$keyword}%' ORDER BY time DESC LIMIT {$offset}, {$page_size};";
+    $query = "SELECT * FROM bookmarks_entries WHERE title LIKE '%{$keyword}%' or note LIKE '%{$keyword}%' or tags LIKE '%{$keyword}%' ORDER BY time DESC LIMIT {$offset}, {$page_size};";
     $result = mysqli_query($conn, $query);
 ?>
 <p>You have found <?=$total?> entries using the keyword <code><?=unsanitize($keyword)?></code>.</p>
