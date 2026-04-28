@@ -50,7 +50,7 @@ else
 $page_size = 20;
 $page_scale = 5;
 
-$result = mysqli_query($conn, "SELECT COUNT(*) FROM bookmarks_entries WHERE title LIKE '%{$keyword}%' or note LIKE '%{$keyword}%' ORDER BY time DESC;");
+$result = mysqli_query($conn, "SELECT COUNT(*) FROM bookmarks_entries WHERE title LIKE '%{$keyword}%' or note LIKE '%{$keyword}%' or tags LIKE '%{$keyword}%' ORDER BY time DESC;");
 $total = mysqli_fetch_array($result)[0];
 
 $page_max = ceil($total / $page_size);
